@@ -34,6 +34,15 @@ namespace Seating_Chart
                                   {350m, 350m, 350m, 350m}
                                 };
              */
+            string[,] seatPrices = new string[MAX_COL + 1, MAX_ROW + 1];
+            for (int i = 0; i <= MAX_ROW; i++)
+                for (int k = 0; k <= MAX_COL; k++)
+                {
+                    if (i < 4)
+                        seatPrices[k, i] = (450 - i * 25).ToString() + "m";
+                    else
+                        seatPrices[k, i] = (475 - i * 25).ToString() + "m";
+                }
 
             // Get the selected row number.
             if (int.TryParse(rowTextBox.Text, out row))
@@ -48,6 +57,7 @@ namespace Seating_Chart
                         if (col >= 0 && col <= MAX_COL)
                         {
                             // TODO:  Display the selected seat's price.
+                            priceLabel.Text = seatPrices[col, row];
                         }
                         else
                         {

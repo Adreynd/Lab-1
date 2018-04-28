@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.newGameButton = new System.Windows.Forms.Button();
             this.resultLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,25 +58,25 @@
             this.label25 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // exitButton
             // 
-            this.button2.Location = new System.Drawing.Point(212, 410);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.exitButton.Location = new System.Drawing.Point(212, 410);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(89, 23);
+            this.exitButton.TabIndex = 23;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // button1
+            // newGameButton
             // 
-            this.button1.Location = new System.Drawing.Point(118, 410);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "New Game";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.newGameButton.Location = new System.Drawing.Point(118, 410);
+            this.newGameButton.Name = "newGameButton";
+            this.newGameButton.Size = new System.Drawing.Size(88, 23);
+            this.newGameButton.TabIndex = 22;
+            this.newGameButton.Text = "New Game";
+            this.newGameButton.UseVisualStyleBackColor = true;
+            this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
             // resultLabel
             // 
@@ -384,8 +384,8 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -398,14 +398,15 @@
             this.Controls.Add(this.label1);
             this.Name = "TTTForm";
             this.Text = "Tic Tac Toe";
+            this.Load += new System.EventHandler(this.TTTForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button newGameButton;
         private System.Windows.Forms.Label resultLabel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
