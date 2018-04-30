@@ -22,10 +22,10 @@ namespace FutureValue
         }
 
         // TODO: Declare the rectangular array and the row index here
-        const int rows = 10;
-        const int columns = 4;
+        const int ROWS = 10;
+        const int COLUMNS = 4;
 
-        private string[,] rect = new string[columns, rows];
+        private string[,] rect = new string[ROWS, COLUMNS];
         int indexc = 0;
         
         private void btnCalculate_Click(object sender, EventArgs e)
@@ -49,10 +49,10 @@ namespace FutureValue
                     txtMonthlyInvestment.Focus();
 
                     // TODO: Add the calculation to the rectangular array here
-                    rect[indexc, 0] = monthlyInvestment.ToString();
-                    rect[indexc, 1] = interestRateYearly.ToString();
+                    rect[indexc, 0] = (Decimal.Round(monthlyInvestment, 2)).ToString();
+                    rect[indexc, 1] = (Decimal.Round(interestRateYearly, 1)).ToString() + "%";
                     rect[indexc, 2] = years.ToString();
-                    rect[indexc, 3] = futureValue.ToString();
+                    rect[indexc, 3] = (Decimal.Round(futureValue, 2)).ToString();
                     indexc++;
                 }
             }
@@ -68,16 +68,16 @@ namespace FutureValue
         {
             // TODO: Display the rectangular array in a dialog box here
             string message = "Inv/Mo.   Rate    Years   Future Value\n";
-            int count = 0;
-            foreach(string line in rect)
+
+            for (int i = 0; i < indexc; i++)
             {
-                message += line;
-                count++;
-                if (count % 4 == 0)
-                    message += "\n";
-                else
-                    message += "           ";
+                for (int k = 0; k < COLUMNS; k++)
+                {
+                    message += rect[i, k] + "       ";
+                }
+                message += "\n";
             }
+
             MessageBox.Show(message);
             this.Close();
         }
